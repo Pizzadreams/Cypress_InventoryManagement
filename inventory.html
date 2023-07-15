@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventory Management</title>
+</head>
+<body>
+  <h1>Inventory Management</h1>
+  
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>Apples</td>
+      <td id="applesQuantity">0</td>
+      <td>
+        <button onclick="decreaseQuantity('apples')">Decrease</button>
+        <button onclick="increaseQuantity('apples')">Increase</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Oranges</td>
+      <td id="orangesQuantity">0</td>
+      <td>
+        <button onclick="decreaseQuantity('oranges')">Decrease</button>
+        <button onclick="increaseQuantity('oranges')">Increase</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Bananas</td>
+      <td id="bananasQuantity">0</td>
+      <td>
+        <button onclick="decreaseQuantity('bananas')">Decrease</button>
+        <button onclick="increaseQuantity('bananas')">Increase</button>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+
+
+    function decreaseQuantity(item) {
+      var quantityElement = document.getElementById(item + "Quantity"); // retrieve HTML element with the item parameter
+      var currentQuantity = parseInt(quantityElement.textContent);
+      if (currentQuantity > 0) {
+      // console.log("This is the current quantity" + currentQuantity)
+        quantityElement.textContent = currentQuantity - 1;
+      }
+      console.log("This is the current quantity " + currentQuantity)
+    }
+
+    function increaseQuantity(item) {
+      var quantityElement = document.getElementById(item + "Quantity");
+      var currentQuantity = parseInt(quantityElement.textContent);
+      quantityElement.textContent = currentQuantity + 1;
+      console.log("This is the current quantity " + currentQuantity)
+    }
+  </script>
+</body>
+</html>
