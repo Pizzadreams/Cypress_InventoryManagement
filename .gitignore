@@ -11,7 +11,7 @@ yarn-error.log
 ./cypress/videos/
 ./cypress/screenshots/
 
-# Ignore generated files
+
 ./cypress/results/
 
 # Config files with sensitive data (e.g., API keys, tokens)
@@ -20,17 +20,15 @@ yarn-error.log
 ./cypress/support/index.js
 ./cypress/support/commands.js
 
-# Ignore the Cypress binary cache
-./.cache/
-
-# Ignore other generated artifacts
+# Generated artifacts
 ./cypress/logs/
 ./cypress/reports/
 
-# Ignore IDE and editor files
+# IDE and editor files
 .vscode/
 .idea/
 
-# Ignore OS-specific files
+# OS-specific files
 .DS_Store
 Thumbs.db
+
