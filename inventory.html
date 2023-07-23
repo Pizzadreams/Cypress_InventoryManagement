@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html>
+  
 <head>
   <title>Inventory Management</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <h1>Inventory Management</h1>
-  
-  <table>
+  <div class="inventory_main">
+    <h2>Inventory Groups</h2>
+    <ul class="inventory_groups">
+      <div class="dropdown">
+        <button class="dropbtn">Fruits</button>
+        <div class="dropdown-content" id="fruits">
+          <table>
+            <tr>
+              <th>Item</th>
+              <th>Qty.</th>
+              <th>Action</th>
+            </tr>
+            <script>
+            const items = ['Apples', 'Oranges', 'Bananas'];
+              for (const item of items) {
+                document.write(`
+                  <tr>
+                    <td>${item}</td>
+                    <td id="${item.toLowerCase()}Quantity">0</td>
+                    <td>
+                      <button onclick="decreaseQuantity('${item.toLowerCase()}')">-</button>
+                      <button onclick="increaseQuantity('${item.toLowerCase()}')">+</button>
+                    </td>
+                  </tr>
+                `);
+              }
+            </script>
+          </table>
+        </div>
+      </div> 
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown('tools')">Tools</button>
+        <div class="dropdown-content" id="tools">
+          <table>
+            <tr>
+              <th>Item</th>
+              <th>Qty.</th>
+              <th>Action</th>
+            </tr>
+            <script>
+              const tools = ['Hammer', 'Hatchet', 'Pickaxe'];
+              for (const tool of tools) {
+                document.write(`
+                  <tr>
+                    <td>${tool}</td>
+                    <td id="${tool.toLowerCase()}Quantity">0</td>
+                    <td>
+                      <button onclick="decreaseQuantity('${tool.toLowerCase()}')">-</button>
+                      <button onclick="increaseQuantity('${tool.toLowerCase()}')">+</button>
+                    </td>
+                  </tr>
+                `);
+              }
+            </script>
+          </table>
+        </div>
+      </div>
+
+
+    </ul>
+  </div>
+
+  <!-- The rest of your existing HTML -->
+</body>
+
+
+  <!-- <table>
     <tr>
       <th>Item</th>
       <th>Quantity</th>
@@ -36,10 +105,14 @@
         <button onclick="increaseQuantity('bananas')">Increase</button>
       </td>
     </tr>
-  </table>
+  </table> -->
 
   <script>
-
+    
+    function toggleDropdown(groupId) {
+      var dropdown = document.getElementById(groupId);
+      dropdown.classList.toggle("hidden");
+    }
 
     function decreaseQuantity(item) {
       var quantityElement = document.getElementById(item + "Quantity"); // retrieve HTML element with the item parameter
@@ -58,5 +131,4 @@
       console.log("This is the current quantity " + currentQuantity)
     }
   </script>
-</body>
 </html>
