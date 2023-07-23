@@ -1,0 +1,33 @@
+# Ignore node_modules and dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignore Cypress binary cache
+./cypress/videos/
+./cypress/screenshots/
+
+# Ignore generated files
+./cypress/fixtures/
+./cypress/results/
+
+# Ignore config files with sensitive data (e.g., API keys, tokens)
+./cypress/plugins/config.js
+./cypress/plugins/index.js
+./cypress/support/index.js
+./cypress/support/commands.js
+
+# Ignore the Cypress binary cache
+./.cache/
+
+# Ignore other generated artifacts
+./cypress/logs/
+./cypress/reports/
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
